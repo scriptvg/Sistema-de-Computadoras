@@ -1,0 +1,21 @@
+{
+  "USERS": [
+    {
+      "id": 19829,
+      "name": "Allan",
+      "email": "velezalan34@gmail.com",
+      "role": "admin",
+      "password": "lsdisfun34"
+    },
+    {
+      "id": 19830,
+      "name": "John", 
+      "email": "Alan@gmail.com",
+      "role": "student",
+      "password": "student123"
+    }
+  ],
+  "SEDES": [
+    
+  ]
+}

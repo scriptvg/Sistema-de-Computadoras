@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="#icon">
+    <title>FWD Sistema de prestamos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/components/login-form.css">
+    <link rel="stylesheet" href="../css/pages/login.css">
+</head>
+<body>
+    
+    <!-- Contenedor principal para Login -->
+    <div class="container">
+        <!-- Fila para centrar el contenido -->
+        <div class="row justify-content-center align-items-center">
+            <!-- Columna para el formulario de inicio de sesión -->
+            <div class="col-md-6">
+                <!-- Tarjeta de inicio de sesión -->
+                <div class="card">
+                    <!-- Encabezado del formulario -->
+                    <div class="card-header text-center">
+                        <img src="../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo">
+                        <h4>Sistema de Préstamos de Computadoras FWD</h4>
+                    </div>
+                    <!-- Cuerpo del formulario -->
+                    <div class="card-body">
+                        <!-- Formulario de inicio de sesión -->
+                        <h5 class="text-center">Iniciar Sesión</h5>
+                        <form id="loginForm" novalidate>
+                            <!-- Grupo del formulario -->
+                            <div class="form-group">
+                                <!-- label de email -->
+                                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                                <!-- Input de email -->
+                                <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required autocomplete="email">
+                            </div>
+                            <!-- Grupo del formulario -->
+                            <div class="form-group">
+                                <!-- label de contraseña -->
+                                <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                                <!-- Input de contraseña -->
+                                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required autocomplete="current-password">
+                            </div>
+                            <!-- Grupo del botón -->
+                            <div class="form-group">
+                                <!-- Boton de iniciar sesion -->
+                                <button type="submit" class="btn btn-primary btn-block" id="btn">
+                                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+    <script type="module" src="../js/utils/main.js"></script>
+    <script type="module" src="../js/pages/login.js"></script>
+
+</body>
+</html>
