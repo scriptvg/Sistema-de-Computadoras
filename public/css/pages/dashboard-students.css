@@ -1,20 +1,11 @@
-/* dashboard-students.css */
-
-/* Variables */
-:root {
-    --primary-color: #4CAF50;
-    --secondary-color: #333;
-    --background-color: #f4f4f4;
-    --text-color: #fff;
-    --font-family: Arial, sans-serif;
-}
+@import url("../components/variables.css");
 
 /* General styles */
 body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
+    background-color: var(--bg-dark);
 }
 
 /* Header styles */

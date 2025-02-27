@@ -23,8 +23,8 @@ export async function autenticarUser(email, password) {
             });
             
             const redirectPath = user.role === "admin" 
-            ? "./pages/admin/dashboard.html"
-            : "./pages/dashboard.html";
+            ? "/pages/admin/dashboard.html"
+            : "/pages/dashboard.html";
             window.location.href = redirectPath;
 
 
