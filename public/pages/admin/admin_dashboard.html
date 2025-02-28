@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../../css/pages/dashboard-admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Barra de Navegación - Barra de navegación principal para el dashboard -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <!-- Contenedor de Navegación - Centra y limita el ancho del contenido -->
+        <div class="container">
+            <!-- Enlace a Inicio - Contiene el logo de la empresa y enlaza a la página principal -->
+            <a class="navbar-brand" href="../index.html">
+                <!-- Imagen del logo de la empresa con restricciones de tamaño -->
+                <img src="../../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo" class="img-fluid" style="max-height: 40px;">
+            </a>
+            <!-- Botón de menú móvil - Aparece en pantallas más pequeñas -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Icono de menú hamburguesa para vista móvil -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido de navegación colapsable - Contiene los elementos de navegación principales -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Lista de elementos de navegación - Alineados a la derecha -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- Menú desplegable de Perfil - Opciones de cuenta de usuario -->
+                    <li class="nav-item dropdown">
+                        <!-- Botón de menú desplegable de Perfil -->
+                        <button class="btn btn-light dropdown-toggle"
+                                type="button" id="profileDropdown" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <!-- Icono y texto de perfil de usuario -->
+                            <i class="fas fa-user-circle mr-1"></i>
+                            Perfil
+                        </button>
+                        <!-- Elementos del menú desplegable -->
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                            <!-- Enlace a Perfil con icono -->
+                            <a class="dropdown-item d-flex align-items-center" href=".././admin/admin_perfil.html" id="profileBtn">
+                                <i class="fas fa-user mr-2"></i>
+                                Mi Perfil
+                            </a>
+                            <!-- Línea divisoria entre elementos del menú -->
+                            <div class="dropdown-divider"></div>
+                            <!-- Botón de Cerrar Sesión con icono -->
+                            <a class="dropdown-item d-flex align-items-center" href="#" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt mr-2"></i>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Estatus de los procesos -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Total Solicitudes</h5>
+                    <p id="totalRequests" class="h2">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Préstamos Activos</h5>
+                    <p id="" class="h2">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitudes Pendientes</h5>
+                    <p id="pendingRequests" class="h2">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Solicitudes Aprobadas</h5>
+                    <p id="approvedRequests" class="h2">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Visualizador de solicitudes -->
+    <div class="container">
+        
+        <!-- Fila del Gestor de Permisos -->
+        <div class="row">
+            
+            <!-- Columna para el Gestor -->
+            <div class="col-md-12">
+                <h1 class="text-center">Solicitudes de préstamo</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID Usuario</th>
+                            <th>Equipo</th>
+                            <th>Fecha Salida</th>
+                            <th>Fecha Regreso</th>
+                            <th>Campus</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                         <tr>
+                            <td>Nombre</td>
+                            <td>Correo</td>
+                            <td>Fecha de solicitud</td>
+                            <td>Fecha de entrega</td>
+                            <td>Estado</td>
+                            <td>
+                                <button class="btn btn-primary">Aceptar</button>
+                                <button class="btn btn-danger">Rechazar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+
+    <script type="module" src="../../js/pages/dashboard-admin.js"></script>
+    <script type="module" src="../../js/utils/main.js"></script>
+</body>
+</html>

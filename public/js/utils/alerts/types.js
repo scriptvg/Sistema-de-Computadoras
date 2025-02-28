@@ -1,45 +1,50 @@
-export const AlertConfig = {
-    defaultTimer: 1500,
-    buttons: {
-        confirm: 'Sí',
-        cancel: 'No'
+// Configuración de alertas
+export const ConfigAlerta = {
+    tiempoDefecto: 1500,
+    botones: {
+        confirmar: 'Sí',
+        cancelar: 'No'
     }
 };
 
-export const SuccessAlert = (title = '¡Bienvenido!', text = 'Inicio de sesión exitoso') => {
+// Alerta de éxito
+export const AlertaExito = (titulo = '¡Bienvenido!', texto = 'Inicio de sesión exitoso') => {
     return Swal.fire({
-        title,
-        text,
+        title: titulo,
+        text: texto,
         icon: 'success',
         showConfirmButton: false,
-        timer: AlertConfig.defaultTimer
+        timer: ConfigAlerta.tiempoDefecto
     });
 };
 
-export const ErrorAlert = (title = 'Error', text = 'Ha ocurrido un error') => {
+// Alerta de error
+export const AlertaError = (titulo = 'Error', texto = 'Ha ocurrido un error') => {
     return Swal.fire({
         icon: 'error',
-        title,
-        text
+        title: titulo,
+        text: texto
     });
 };
 
-export const WarningAlert = (title = 'Advertencia', text) => {
+// Alerta de advertencia
+export const AlertaAdvertencia = (titulo = 'Advertencia', texto) => {
     return Swal.fire({
         icon: 'warning',
-        title,
-        text
+        title: titulo,
+        text: texto
     });
 };
 
-export const ConfirmAlert = (title = '¿Está seguro?', text) => {
+// Alerta de confirmación
+export const AlertaConfirmacion = (titulo = '¿Está seguro?', texto) => {
     return Swal.fire({
         icon: 'question',
-        title,
-        text,
+        title: titulo,
+        text: texto,
         showCancelButton: true,
-        confirmButtonText: AlertConfig.buttons.confirm,
-        cancelButtonText: AlertConfig.buttons.cancel
+        confirmButtonText: ConfigAlerta.botones.confirmar,
+        cancelButtonText: ConfigAlerta.botones.cancelar
     });
 };
 

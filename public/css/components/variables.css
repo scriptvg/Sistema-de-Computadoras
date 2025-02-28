@@ -1,9 +1,72 @@
 :root {
-    --color-primario: #009fe3;
-    --color-secundario: #6a1b9a;
-    --accent-rosa: #e91e63;
-    --accent-amarillo: #ffcc00;
-    --text-light: #ffffff;
-    --text-dark: #212121
-    --bg-dark: #121212;
+    /* Colores principales - Los que más vamos a usar */
+    --primary-color: #2196F3;      /* Azul principal */
+    --primary-light: #64B5F6;      /* Para hover y estados activos */
+    --primary-dark: #1976D2;       /* Para elementos más importantes */
+    
+    /* Colores secundarios - Para dar contraste */
+    --secondary-color: #455A64;    /* Gris azulado */
+    --secondary-light: #78909C;    /* Para textos menos importantes */
+    --secondary-dark: #37474F;     /* Para headers y elementos destacados */
+    
+    /* Colores de estado - Para feedback al usuario */
+    --success-color: #2ECC71;      /* Verde para éxito */
+    --error-color: #E74C3C;        /* Rojo para errores */
+    --warning-color: #F1C40F;      /* Amarillo para advertencias */
+    --info-color: #3498DB;         /* Azul claro para información */
+    
+    /* Colores de fondo y texto */
+    --background-color: #F5F7FA;   /* Fondo general de la app */
+    --surface-color: #FFFFFF;      /* Fondo de tarjetas y elementos */
+    --text-color: #2C3E50;         /* Color principal de texto */
+    --text-muted: #95A5A6;         /* Texto secundario */
+    --border-color: #E0E0E0;       /* Color de bordes */
+
+    /* Efectos chidos de sombras (Neumorphism) */
+    --neumorphic-flat: var(--background-color);
+    --neumorphic-shadow-dark: rgba(163, 177, 198, 0.6);
+    --neumorphic-shadow-light: rgba(255, 255, 255, 0.9);
+    --neumorphic-radius: 15px;
+    
+    /* Tamaños de letra */
+    --font-size-xs: 0.75rem;       /* 12px */
+    --font-size-sm: 0.875rem;      /* 14px */
+    --font-size-base: 1rem;        /* 16px */
+    --font-size-lg: 1.25rem;       /* 20px */
+    --font-size-xl: 1.5rem;        /* 24px */
+    
+    /* Espaciados - Para mantener todo ordenado */
+    --spacing-xs: 0.25rem;         /* 4px */
+    --spacing-sm: 0.5rem;          /* 8px */
+    --spacing-md: 1rem;            /* 16px */
+    --spacing-lg: 1.5rem;          /* 24px */
+    --spacing-xl: 2rem;            /* 32px */
+    
+    /* Bordes redondeados */
+    --border-radius-sm: 4px;       /* Botones pequeños */
+    --border-radius: 8px;          /* Elementos normales */
+    --border-radius-lg: 12px;      /* Tarjetas grandes */
+    
+    /* Sombras para profundidad */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);    /* Sombra sutil */
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);    /* Sombra media */
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);  /* Sombra grande */
+    
+    /* Animaciones suaves */
+    --transition-speed: 0.2s;
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Estilos para formularios y botones */
+    --input-bg: var(--surface-color);
+    --input-border: var(--border-color);
+    --input-focus-border: var(--primary-color);
+    --input-focus-shadow: rgba(33, 150, 243, 0.15);
+    --button-primary-bg: var(--primary-color);
+    --button-primary-hover: var(--primary-dark);
+    --button-secondary-bg: var(--secondary-color);
+    --button-secondary-hover: var(--secondary-dark);
+    --button-padding: var(--spacing-sm) var(--spacing-lg);
 }
+
+
+

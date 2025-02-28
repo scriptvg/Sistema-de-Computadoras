@@ -1,21 +1,355 @@
 {
   "USERS": [
     {
-      "id": 19829,
+      "id": "19829",
       "name": "Allan",
       "email": "velezalan34@gmail.com",
       "role": "admin",
       "password": "lsdisfun34"
     },
     {
-      "id": 19830,
-      "name": "John", 
-      "email": "Alan@gmail.com",
+      "id": "19830",
+      "name": "Adriana",
+      "email": "adriana@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19831",
+      "name": "Allan José",
+      "email": "allanjose@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19832",
+      "name": "Ariel",
+      "email": "ariel@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19833",
+      "name": "Audrey",
+      "email": "audrey@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19834",
+      "name": "Bairon",
+      "email": "bairon@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19835",
+      "name": "Brandon",
+      "email": "brandon@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19836",
+      "name": "Caleb Martin",
+      "email": "calebmartin@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19837",
+      "name": "Daniel",
+      "email": "daniel@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19838",
+      "name": "Fabricio",
+      "email": "fabricio@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19839",
+      "name": "Darien",
+      "email": "darien@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19840",
+      "name": "Edson",
+      "email": "edson@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19841",
+      "name": "Fer Alexey",
+      "email": "feralexey@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19842",
+      "name": "Isaac David",
+      "email": "isaacdavid@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19843",
+      "name": "Jaqueline",
+      "email": "jaqueline@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19844",
+      "name": "Jocksan",
+      "email": "jocksan@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19845",
+      "name": "José",
+      "email": "jose@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19846",
+      "name": "Josebeth",
+      "email": "josebeth@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19847",
+      "name": "Joselyn",
+      "email": "joselyn@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19848",
+      "name": "Jostin Gabriel",
+      "email": "jostingabriel@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19849",
+      "name": "Manuel Antonio",
+      "email": "manuelantonio@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19850",
+      "name": "María José",
+      "email": "mariajose@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19851",
+      "name": "Marieza Coraima",
+      "email": "mariezacoraima@fwd.com",
+      "role": "student",
+      "password": "student123"
+    },
+    {
+      "id": "19852",
+      "name": "Steven",
+      "email": "steven@fwd.com",
       "role": "student",
       "password": "student123"
     }
   ],
   "SEDES": [
-    
+    {
+      "id": "19821e8eve1982",
+      "name": "Sede de Puntarenas"
+    },
+    {
+      "id": "10921109do20i",
+      "name": "Sede de San Jose"
+    }
+  ],
+  "REQUEST": [
+    {
+      "id": "dd08",
+      "userId": {
+        "idUsuario": "19829",
+        "sede": "norte",
+        "tipoEquipo": "3N347S2",
+        "fechaSalida": "2025-03-02",
+        "fechaRegreso": "2025-03-04",
+        "estado": "pendiente"
+      },
+      "status": "activo",
+      "requestDate": "2025-02-28T01:23:21.926Z"
+    },
+    {
+      "id": "6753",
+      "userId": {
+        "idUsuario": "19830",
+        "sede": "norte",
+        "tipoEquipo": "3N347S2",
+        "fechaSalida": "2025-03-02",
+        "fechaRegreso": "2025-03-04",
+        "estado": "pendiente"
+      },
+      "status": "activo",
+      "requestDate": "2025-02-28T03:03:45.130Z"
+    }
+  ],
+  "COMPUTERS": [
+    {
+      "id": "5CD4078D57",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "3N347S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 3420"
+    },
+    {
+      "id": "5CD4078CD4",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "5CD4078D7L",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "5CD4078D8G",
+      "assigned_to": null,
+      "state": "available",
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "2DN87S2",
+      "assigned_to": null,
+      "state": "available",
+      "model": "Dell Latitude 3420"
+    },
+    {
+      "id": "FGHG7S2",
+      "assigned_to": null,
+      "state": "available",
+      "model": "Dell Latitude 5490"
+    },
+    {
+      "id": "9WCD7S2",
+      "assigned_to": null,
+      "state": "available",
+      "model": "Dell Latitude 5490"
+    },
+    {
+      "id": "5CD4078D8B",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "G5717S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 5490"
+    },
+    {
+      "id": "DGR97S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 5490"
+    },
+    {
+      "id": "5WNF7S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 5490"
+    },
+    {
+      "id": "5CD4078D7N",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "5CD4078D8W",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "99RD7S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 5490"
+    },
+    {
+      "id": "5CD4078D85",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "5CD4078D8M",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "5CD4078D8N",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "5CD4078DC2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "1Q667S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 3420"
+    },
+    {
+      "id": "5CD4078D8C",
+      "state": "available",
+      "assigned_to": null,
+      "model": "HP ProBook 440 G5"
+    },
+    {
+      "id": "JD667S2",
+      "state": "available",
+      "assigned_to": null,
+      "model": "Dell Latitude 3420"
+    },
+    {
+      "id": "G8717S2",
+      "assigned_to": null,
+      "model": "Dell Latitude 5490"
+    }
+  ],
+  "STUDENTS": [
+    {
+      "id": "19830",
+      "name": "Adriana"
+    }
   ]
 }

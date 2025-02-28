@@ -1,20 +1,25 @@
 .card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    margin-top: 2rem;
-    transition: box-shadow 0.3s ease;
+    background: var(--neumorphic-flat);
+    box-shadow: 8px 8px 16px var(--neumorphic-shadow-dark),
+               -8px -8px 16px var(--neumorphic-shadow-light);
+    border-radius: var(--neumorphic-radius);
+    margin-top: var(--spacing-xl);
+    transition: all var(--transition-speed) var(--transition-timing);
+    border: none;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 20px var(--neumorphic-shadow-dark),
+               -12px -12px 20px var(--neumorphic-shadow-light);
 }
 
 .card-header {
-    background-color: #f8f9fa;
-    border-bottom: 2px solid #e9ecef;
-    padding: 1.5rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    background: var(--neumorphic-flat);
+    border-bottom: none;
+    padding: var(--spacing-xl);
+    border-radius: var(--neumorphic-radius) var(--neumorphic-radius) 0 0;
+    box-shadow: inset 0 -2px 5px var(--neumorphic-shadow-dark);
 }
 
 .card-header h4 {
@@ -31,15 +36,27 @@
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background: var(--primary-color);
     border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--neumorphic-radius);
+    transition: all var(--transition-speed) var(--transition-timing);
     cursor: pointer;
+    box-shadow: 5px 5px 10px var(--neumorphic-shadow-dark),
+               -5px -5px 10px var(--neumorphic-shadow-light);
+    font-weight: var(--font-weight-medium);
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background: var(--primary-dark);
     transform: translateY(-2px);
+    box-shadow: 7px 7px 14px var(--neumorphic-shadow-dark),
+               -7px -7px 14px var(--neumorphic-shadow-light);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: inset 3px 3px 6px var(--neumorphic-shadow-dark),
+                inset -3px -3px 6px var(--neumorphic-shadow-light);
 }

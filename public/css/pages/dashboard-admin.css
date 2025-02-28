@@ -1,3 +1,180 @@
 @import url("../components/variables.css");
 @import url("../components/nav.css");
 
+/* Main Layout */
+body {
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: var(--line-height-base);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Customization */
+.navbar {
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--surface-color);
+}
+
+.nav-link {
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Main Content Area */
+.main-content {
+    padding: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Stats Section */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    background: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.stat-card:hover i {
+    transform: scale(1.1);
+}
+
+.stat-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+.stat-card p {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Dashboard Card */
+.dashboard-card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: box-shadow var(--transition-speed) var(--transition-timing);
+}
+
+.dashboard-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.dashboard-card h2 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+    width: 100%;
+    transition: border-color var(--transition-speed) var(--transition-timing);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+/* Table Styles */
+.table-container {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th {
+    background-color: rgba(33, 150, 243, 0.05);
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-md);
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
+}
+
+.table td {
+    padding: var(--spacing-md);
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed) var(--transition-timing);
+}
+
+.table tr:hover td {
+    background-color: rgba(33, 150, 243, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        margin: 0 calc(-1 * var(--spacing-md));
+        padding: 0 var(--spacing-md);
+        width: calc(100% + 2 * var(--spacing-md));
+    }
+    .main-content {
+        padding: var(--spacing-md);
+    }
+    .dashboard-card {
+        padding: var(--spacing-md);
+    }
+}

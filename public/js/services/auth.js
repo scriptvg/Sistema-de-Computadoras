@@ -17,13 +17,17 @@ export async function autenticarUser(email, password) {
 
             await Swal.fire({
                 title: "Usuario encontrado",
-                icon: "success",
+                /* icon: "success", */
+                timerProgressBar: true,
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
             });
             
             const redirectPath = user.role === "admin" 
-            ? "/pages/admin/dashboard.html"
+            ? "/pages/admin/admin_dashboard.html"
             : "/pages/dashboard.html";
             window.location.href = redirectPath;
 

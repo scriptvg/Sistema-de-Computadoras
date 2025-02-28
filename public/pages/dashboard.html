@@ -1,39 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Students</title>
+    <title>Dashboard Estudiantes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css">
-    <link type="module" rel="stylesheet" href="../css/pages/dashboard-students.css">
+    <link rel="stylesheet" href="../css/pages/dashboard-students.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
 
-    <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-       
-        <!-- Icono de FWD -->
-        <a class="navbar-brand" href="#">
-            <img src="../img/FWD - Logotipo - Slogan_Slogan gris.avif" class="d-inline-block align-top" alt="">
-
-        <!-- DropDown para moviles -->
-        <a class="navbar-brand" href="#">FWD COSTA RICA / ESTUDIANTES</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
+    <!-- Barra de Navegación - Barra de navegación principal para el dashboard -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <!-- Contenedor de Navegación - Centra y limita el ancho del contenido -->
+        <div class="container">
+            <!-- Enlace a Inicio - Contiene el logo de la empresa y enlaza a la página principal -->
+            <a class="navbar-brand" href="../index.html">
+                <!-- Imagen del logo de la empresa con restricciones de tamaño -->
+                <img src="../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo" class="img-fluid" style="max-height: 40px;">
+            </a>
+            <!-- Botón de menú móvil - Aparece en pantallas más pequeñas -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Icono de menú hamburguesa para vista móvil -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido de navegación colapsable - Contiene los elementos de navegación principales -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Lista de elementos de navegación - Alineados a la derecha -->
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <!-- Enlace a Dashboard - Página actual activa -->
+                    <li class="nav-item">
+                        <a class="nav-link px-3 active" href="/pages/dashboard.html">
+                            <!-- Icono y texto de Dashboard -->
+                            <i class="fas fa-tachometer-alt mr-1"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <!-- Menú desplegable de Perfil - Opciones de cuenta de usuario -->
+                    <li class="nav-item dropdown">
+                        <!-- Botón de menú desplegable de Perfil -->
+                        <button class="btn btn-light dropdown-toggle"
+                                type="button" id="profileDropdown" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <!-- Icono y texto de perfil de usuario -->
+                            <i class="fas fa-user-circle mr-1"></i>
+                            Perfil
+                        </button>
+                        <!-- Elementos del menú desplegable -->
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                            <!-- Enlace a Perfil con icono -->
+                            <a class="dropdown-item d-flex align-items-center" href="perfil.html" id="profileBtn">
+                                <i class="fas fa-user mr-2"></i>
+                                Mi Perfil
+                            </a>
+                            <!-- Línea divisoria entre elementos del menú -->
+                            <div class="dropdown-divider"></div>
+                            <!-- Botón de Cerrar Sesión con icono -->
+                            <a class="dropdown-item d-flex align-items-center" href="#" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt mr-2"></i>
+                                Cerrar Sesión
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    
+    <!-- Contenido Principal -->
+    <div class="container py-4">
+        <!-- Sección de Estatus -->
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm border-0 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-laptop fa-3x text-primary mb-3"></i>
+                        <h3 class="h5 mb-2">Equipos Disponibles</h3>
+                        <p id="availableCount" class="h2 mb-0 text-primary">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm border-0 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-clock fa-3x text-warning mb-3"></i>
+                        <h3 class="h5 mb-2">Préstamos Activos</h3>
+                        <p id="activeLoansCount" class="h2 mb-0 text-warning">0</p>
+                    </div>
+                </div>
+            </div>
 
-    
-    
+            <!-- Historial de Préstamos -->
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm border-0 bg-light">
+                    <div class="card-body text-center">
+                        <i class="fas fa-history fa-3x text-success mb-3"></i>
+                        <h3 class="h5 mb-2">Historial Préstamos</h3>
+                        <p id="loanHistoryCount" class="h2 mb-0 text-success">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    
+        <!-- Sección de Solicitud de Préstamo -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-white border-0">
+                <h2 class="h4 mb-0">Solicitar Préstamo</h2>
+            </div>
+            <div class="card-body">
+                <form id="loanRequestForm" class="needs-validation" novalidate>
+                    <!-- ID del Usuario (Auto-completado) -->
+                    <div class="form-group mb-3">
+                        <label for="userId" class="form-label">ID del Usuario</label>
+                        <input type="text" class="form-control" id="userId" readonly>
+                    </div>
+
+                    <!-- Selección de Sede -->
+                    <div class="form-group mb-3">
+                        <label for="campus" class="form-label">Sede</label>
+                        <select class="form-select form-control" id="campus" required>
+                            <option value="" selected disabled>Seleccionar sede...</option>
+                            <option value="central">Sede Central</option>
+                            <option value="norte">Sede Norte</option>
+                            <option value="sur">Sede Sur</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione una sede.</div>
+                    </div>
+
+                    <!-- Selección de Equipo -->
+                    <div class="form-group mb-3">
+                        <label for="equipmentType" class="form-label">Código de Equipo</label>
+                        <select class="form-select form-control" id="equipmentType" required>
+                            <option value="" selected disabled>Seleccionar equipo...</option>
+                            <option value="5CD4078D57">5CD4078D57</option>
+                            <option value="3N347S2">3N347S2</option>
+                            <option value="5CD4078CD4">5CD4078CD4</option>
+                            <option value="5CD4078D7L">5CD4078D7L</option>
+                            <option value="5CD4078D8G">5CD4078D8G</option>
+                            <option value="2DN87S2">2DN87S2</option>
+                            <option value="FGHG7S2">FGHG7S2</option>
+                            <option value="9WCD7S2">9WCD7S2</option>
+                            <option value="5CD4078D8B">5CD4078D8B</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor seleccione un equipo.</div>
+                    </div>
+
+                    <!-- Dates -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="departureDate" class="form-label">Fecha de Salida</label>
+                            <input type="date" class="form-control" id="departureDate" required>
+                            <div class="invalid-feedback">Por favor seleccione la fecha de salida.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="returnDate" class="form-label">Fecha de Regreso</label>
+                            <input type="date" class="form-control" id="returnDate" required>
+                            <div class="invalid-feedback">Por favor seleccione la fecha de regreso.</div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-group mb-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">Términos y Condiciones</h5>
+                                <div class="terms-scroll" style="max-height: 200px; overflow-y: auto;">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Si viajas en transporte público, debes resguardar tu equipo en tu bolso personal, no exponerlo.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Si llevas el equipo, procura ir acompañado.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Si está lloviendo, procura llevar el equipo en un vehículo apropiado para evitar algún daño.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Evitar jugar, descargar o utilizar el equipo para otros motivos que no sean relacionados con el estudio.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> El equipo será revisado antes y después de ser entregado. Cualquier alteración o instalación indebida podría resultar en la pérdida de privilegios.</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Si retiras una computadora sin haber completado el formulario y la boleta física, podrías ser amonestado.</li>
+                                        <li><i class="fas fa-check-circle text-success me-2"></i> Este formulario debe llenarse junto con la boleta física, que debe estar firmada por la persona encargada.</li>
+                                    </ul>
+                                </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" id="termsAccepted" required>
+                                    <label class="form-check-label" for="termsAccepted">
+                                        He leído y acepto los términos y condiciones
+                                    </label>
+                                    <div class="invalid-feedback">Debe aceptar los términos y condiciones para continuar.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Signature (Optional) -->
+                    <div class="form-group mb-4">
+                        <label for="signature" class="form-label">Firma Digital (Opcional)</label>
+                        <div class="border rounded p-3">
+                            <canvas id="signatureCanvas" class="w-100" style="height: 150px; background: #fff;"></canvas>
+                        </div>
+                        <button type="button" class="btn btn-link btn-sm mt-2" id="clearSignature">
+                            <i class="fas fa-eraser me-1"></i>Limpiar Firma
+                        </button>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary px-4">
+                        <i class="fas fa-paper-plane me-2"></i>Solicitar Préstamo
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Active Loans Table -->
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
+                <h2 class="h4 mb-0">Mis Préstamos Activos</h2>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="bg-light">
+                            <tr>
+                                <th class="border-0">Equipo</th>
+                                <th class="border-0">Fecha Préstamo</th>
+                                <th class="border-0">Fecha Devolución</th>
+                                <th class="border-0">Estado</th>
+                                <th class="border-0">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activeLoansTable" class="border-top-0">
+                            <!-- Añadido dinamico -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
