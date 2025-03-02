@@ -94,9 +94,4 @@ async function eliminarSolicitud(id) {
 }
 
 // Exportar funciones con nombres compatibles para mantener la funcionalidad existente
-export {
-    obtenerSolicitudes as getRequests,
-    crearSolicitud as postRequest,
-    actualizarSolicitud as updateRequest,
-    eliminarSolicitud as deleteRequest
-};
+export { obtenerSolicitudes, crearSolicitud, actualizarSolicitud, eliminarSolicitud };

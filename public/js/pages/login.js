@@ -1,20 +1,28 @@
 import { autenticarUser } from "../services/auth.js"
-const email = document.getElementById("email");
-const password = document.getElementById("password");
 
+/* Elementos del formulario */
+const correo = document.getElementById("email");
+const contrasena = document.getElementById("password");
+const btnVerContrasena = document.getElementById("togglePassword");
+const formInicioSesion = document.getElementById("loginForm")
 
+/* Mostrar/Ocultar contraseña */
+btnVerContrasena.addEventListener("click", () => {
+    const tipo = contrasena.getAttribute("type") === "password" ? "text" : "password";
+    contrasena.setAttribute("type", tipo)
+})
 
-document.getElementById("loginForm").addEventListener("submit", async (event) => {
-        event.preventDefault();
+/* Manejo del inicio de sesión */
+formInicioSesion.addEventListener("submit", async (evento) => {
+    evento.preventDefault();
 
-        const result = await autenticarUser(email.value.trim(), password.value.trim());
+    const resultado = await autenticarUser(correo.value.trim(), contrasena.value.trim());
 
-        if (result === "") {
-            await Swal.fire({
-                title: "Error",
-                text: "Todos los campos son obligatorios",
-                icon: "error"
-            });
-        }
-
-    });
+    if (resultado === "") {
+        await Swal.fire({
+            title: "Error",
+            text: "Todos los campos son obligatorios",
+            icon: "error"
+        });
+    }
+});

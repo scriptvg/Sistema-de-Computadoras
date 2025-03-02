@@ -181,17 +181,15 @@
   ],
   "REQUEST": [
     {
-      "id": "dd08",
       "userId": {
         "idUsuario": "19829",
         "sede": "norte",
         "tipoEquipo": "3N347S2",
         "fechaSalida": "2025-03-02",
         "fechaRegreso": "2025-03-04",
-        "estado": "pendiente"
+        "estado": "rechazado"
       },
-      "status": "activo",
-      "requestDate": "2025-02-28T01:23:21.926Z"
+      "id": "dd08"
     },
     {
       "id": "6753",

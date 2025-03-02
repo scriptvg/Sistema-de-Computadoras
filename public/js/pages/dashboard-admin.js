@@ -44,6 +44,14 @@ async function inicializar() {
 
 function configurarEventListeners() {
     console.log('Configurando event listeners...');
+
+    document.addEventListener("click", function (e) {
+        if (e.target.closest(".ver-detalles")) {
+            const button = e.target.closest(".ver-detalles");
+            const solicitudData = JSON.parse(button.dataset.solicitud);
+            verDetalles(solicitudData);
+        }
+    });
     
     const logoutBtn = document.getElementById("logoutBtn");
     console.log('Logout button encontrado:', !!logoutBtn);
@@ -129,7 +137,7 @@ function mostrarSolicitudes(solicitudes) {
                         <button class="btn btn-sm btn-danger ml-2" onclick="eliminarSolicitudAdmin('${solicitud.id}')">
                             <i class="fas fa-trash"></i>
                         </button>
-                        <button class="btn btn-sm btn-info ml-2" onclick="verDetalles('${JSON.stringify(userId).replace(/'/g, "&apos;")}')">
+                        <button class="btn btn-sm btn-info ml-2 ver-detalles" data-solicitud='${JSON.stringify(userId)}'>
                             <i class="fas fa-eye"></i>
                         </button>
                     </div>
@@ -184,24 +192,35 @@ async function eliminarSolicitudAdmin(solicitudId) {
 
 /* Función para ver detalles */
 function verDetalles(solicitudJSON) {
-    const solicitud = JSON.parse(solicitudJSON);
-    
-    Swal.fire({
-        title: 'Detalles de la Solicitud',
-        html: `
-            <div class="text-left">
-                <p><strong>ID de Usuario:</strong> ${solicitud.userId}</p>
-                <p><strong>Equipo:</strong> ${solicitud.requestDate}</p>
-                <p><strong>Campus:</strong> ${solicitud.userId.sede || 'No especificado'}</p>
-                <p><strong>Fecha de Salida:</strong> ${new Date(solicitud.departureDate).toLocaleDateString()}</p>
-                <p><strong>Fecha de Regreso:</strong> ${new Date(solicitud.returnDate).toLocaleDateString()}</p>
-                <p><strong>Estado:</strong> ${solicitud.status}</p>
-                <p><strong>Fecha de Solicitud:</strong> ${new Date(solicitud.requestDate).toLocaleString()}</p>
-            </div>
-        `,
-        confirmButtonText: 'Cerrar'
-    });
+    try {
+        const solicitud = typeof solicitudJSON === 'string' ? JSON.parse(solicitudJSON) : solicitudJSON;
+        
+        Swal.fire({
+            title: 'Detalles de la Solicitud',
+            html: `
+                <div class="text-left">
+                    <p><strong>ID de Usuario:</strong> ${solicitud.idUsuario || 'No especificado'}</p>
+                    <p><strong>Equipo:</strong> ${solicitud.tipoEquipo || 'No especificado'}</p>
+                    <p><strong>Campus:</strong> ${solicitud.sede || 'No especificado'}</p>
+                    <p><strong>Fecha de Salida:</strong> ${solicitud.fechaSalida ? new Date(solicitud.fechaSalida).toLocaleDateString() : 'No especificado'}</p>
+                    <p><strong>Fecha de Regreso:</strong> ${solicitud.fechaRegreso ? new Date(solicitud.fechaRegreso).toLocaleDateString() : 'No especificado'}</p>
+                    <p><strong>Estado:</strong> ${solicitud.estado || 'No especificado'}</p>
+                </div>
+            `,
+            confirmButtonText: 'Cerrar'
+        });
+    } catch (error) {
+        console.error('Error al mostrar detalles:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No se pudieron cargar los detalles de la solicitud'
+        });
+    }
 }
+
+// Make verDetalles available globally
+window.verDetalles = verDetalles;
 
 /* Punto de mira global */
 window.eliminarSolicitudAdmin = eliminarSolicitudAdmin;
@@ -358,20 +377,19 @@ async function actualizarPrestamosActivos(userId) {
             throw new Error('Formato de datos inválido');
         }
 
-        if (prestamosActivos) {
-            prestamosActivos.textContent = prestamos.length;
+        const prestamosActivosElement = document.getElementById("activeLoans");
+        
+        if (prestamosActivosElement) {
+            prestamosActivosElement.textContent = prestamos.length;
         } else {
-            console.error('No se encontró el elemento prestamosActivos');
+            console.warn('Elemento "activeLoans" no encontrado en el DOM. Asegúrese de que existe en el HTML.');
         }
 
         Swal.close();
     } catch (error) {
         console.error('Error en actualizarPrestamosActivos:', error);
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'No se pudieron cargar los préstamos activos'
-        });
+        // Continue execution even if this fails
+        console.warn('Continuando ejecución a pesar del error en préstamos activos');
     }
 }
 

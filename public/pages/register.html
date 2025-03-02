@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/pages/login.css">
+
+
+</head>
+<body>
+
+        <!-- Main container for Register -->
+        <div class="container">
+            <!-- Row to center content -->
+            <div class="row justify-content-center align-items-center">
+                <!-- Column for registration form -->
+                <div class="col-md-6">
+                    <!-- Registration card -->
+                    <div class="card">
+                        <!-- Form header -->
+                        <div class="card-header text-center">
+                            <img src="../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo">
+                            <h4>Sistema de Préstamos de Computadoras FWD</h4>
+                        </div>
+                        <!-- Form body -->
+                        <div class="card-body">
+                            <!-- Registration form -->
+                            <h5 class="text-center">Registro de Usuario</h5>
+                            <form id="registerForm" novalidate>
+                                <!-- Form group -->
+                                <div class="form-group">
+                                    <!-- Name label -->
+                                    <label for="name"><i class="fas fa-user"></i> Nombre Completo</label>
+                                    <!-- Name input -->
+                                    <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre completo" required autocomplete="name">
+                                </div>
+                                <!-- Form group -->
+                                <div class="form-group">
+                                    <!-- Email label -->
+                                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                                    <!-- Email input -->
+                                    <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required autocomplete="email">
+                                </div>
+                                <!-- Form group -->
+                                <div class="form-group">
+                                    <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required autocomplete="new-password">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword"><i class="fas fa-lock"></i> Confirmar Contraseña</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme su contraseña" required autocomplete="new-password">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button group -->
+                                <div class="form-group">
+                                    <!-- Register button -->
+                                    <button type="submit" class="btn btn-primary btn-block" id="btn">
+                                        <i class="fas fa-user-plus"></i> Registrarse
+                                    </button>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <a href="../pages/login.html">Inicia sesion</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+    <script type="module" src="../js/pages/register.js"></script>
+</body>
+</html>

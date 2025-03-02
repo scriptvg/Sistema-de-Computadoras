@@ -111,6 +111,46 @@ async function eliminarSolicitud(id) {
         throw error;
     }
 }
+// Add this new function for request approval
+async function aprobarSolicitud(solicitudId) {
+    try {
+        const solicitudes = await obtenerSolicitudes();
+        const solicitud = solicitudes.find(s => s.id === solicitudId);
+        
+        if (!solicitud) {
+            throw new Error('Solicitud no encontrada');
+        }
 
-// Exportar funciones
-export { obtenerSolicitudes, crearSolicitud, actualizarSolicitud, eliminarSolicitud, obtenerPrestamosActivos };
+        const datosActualizados = {
+            ...solicitud.userId,
+            estado: 'aprobado'
+        };
+
+        const respuesta = await fetch(`http://localhost:3001/REQUEST/${solicitudId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId: datosActualizados })
+        });
+
+        if (!respuesta.ok) {
+            throw new Error('Error al aprobar la solicitud');
+        }
+
+        return await respuesta.json();
+    } catch (error) {
+        console.error('Error al aprobar solicitud:', error);
+        throw error;
+    }
+}
+
+// Update the export statement to include aprobarSolicitud
+export { 
+    obtenerSolicitudes, 
+    crearSolicitud, 
+    actualizarSolicitud, 
+    eliminarSolicitud, 
+    obtenerPrestamosActivos,
+    aprobarSolicitud 
+};
