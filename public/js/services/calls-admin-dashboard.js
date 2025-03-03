@@ -145,8 +145,29 @@ async function aprobarSolicitud(solicitudId) {
     }
 }
 
+async function obtenerDetallesUsuario(userId) {
+    try {
+        const respuesta = await fetch(`http://localhost:3001/USERS/${userId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!respuesta.ok) {
+            throw new Error('Error al obtener detalles del usuario');
+        }
+
+        return await respuesta.json();
+    } catch (error) {
+        console.error('Error al obtener detalles del usuario:', error);
+        throw error;
+    }
+}
+
 // Update the export statement to include aprobarSolicitud
 export { 
+    obtenerDetallesUsuario,
     obtenerSolicitudes, 
     crearSolicitud, 
     actualizarSolicitud, 

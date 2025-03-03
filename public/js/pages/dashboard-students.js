@@ -87,7 +87,7 @@ function validarFormulario() {
         Swal.fire({
             icon: 'warning',
             title: 'Campo vacío',
-            text: 'Por favor selecciona un campus'
+            text: 'Por favor seleccione una sede'
         });
         return false;
     }
@@ -96,7 +96,7 @@ function validarFormulario() {
         Swal.fire({
             icon: 'warning',
             title: 'Campo vacío',
-            text: 'Por favor selecciona un tipo de equipo'
+            text: 'Por favor seleccione un tipo de equipo'
         });
         return false;
     }
@@ -105,7 +105,7 @@ function validarFormulario() {
         Swal.fire({
             icon: 'warning',
             title: 'Campo vacío',
-            text: 'Por favor selecciona una fecha de salida'
+            text: 'Por favor seleccione una fecha de salida'
         });
         return false;
     }
@@ -114,7 +114,7 @@ function validarFormulario() {
         Swal.fire({
             icon: 'warning',
             title: 'Campo vacío',
-            text: 'Por favor selecciona una fecha de regreso'
+            text: 'Por favor seleccione una fecha de devolución'
         });
         return false;
     }
@@ -122,8 +122,8 @@ function validarFormulario() {
     if (!termsAccepted.checked) {
         Swal.fire({
             icon: 'warning',
-            title: 'Espera',
-            text: 'Debes aceptar los términos'
+            title: 'Atención',
+            text: 'Debe aceptar los términos y condiciones'
         });
         return false;
     }
@@ -155,7 +155,10 @@ function validarFormulario() {
 async function cargarPrestamos() {
     try {
         const prestamos = await obtenerSolicitudes();
-        const misPrestamos = prestamos.filter(p => p.idUsuario === userId.value); // Changed from userId to idUsuario
+        const misPrestamos = prestamos.filter(p => 
+            p.idUsuario === userId.value && 
+            p.userId?.estado === 'en proceso'
+        );
         mostrarPrestamos(misPrestamos);
     } catch (error) {
         console.error('Error:', error);

@@ -167,6 +167,12 @@
       "email": "steven@fwd.com",
       "role": "student",
       "password": "student123"
+    },
+    {
+      "id": "c815",
+      "nombre": "allan el mostro",
+      "apellido": "velezalan34@hotmail.com",
+      "edad": "s4t4n1sg0d34"
     }
   ],
   "SEDES": [
@@ -179,32 +185,7 @@
       "name": "Sede de San Jose"
     }
   ],
-  "REQUEST": [
-    {
-      "userId": {
-        "idUsuario": "19829",
-        "sede": "norte",
-        "tipoEquipo": "3N347S2",
-        "fechaSalida": "2025-03-02",
-        "fechaRegreso": "2025-03-04",
-        "estado": "rechazado"
-      },
-      "id": "dd08"
-    },
-    {
-      "id": "6753",
-      "userId": {
-        "idUsuario": "19830",
-        "sede": "norte",
-        "tipoEquipo": "3N347S2",
-        "fechaSalida": "2025-03-02",
-        "fechaRegreso": "2025-03-04",
-        "estado": "pendiente"
-      },
-      "status": "activo",
-      "requestDate": "2025-02-28T03:03:45.130Z"
-    }
-  ],
+  "REQUEST": [],
   "COMPUTERS": [
     {
       "id": "5CD4078D57",

@@ -16,7 +16,7 @@
         <!-- Contenedor de Navegación - Centra y limita el ancho del contenido -->
         <div class="container">
             <!-- Enlace a Inicio - Contiene el logo de la empresa y enlaza a la página principal -->
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="../../index.html">
                 <!-- Imagen del logo de la empresa con restricciones de tamaño -->
                 <img src="../../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo" class="img-fluid" style="max-height: 40px;">
             </a>
@@ -123,18 +123,64 @@
                             <td>Fecha de solicitud</td>
                             <td>Fecha de entrega</td>
                             <td>Estado</td>
-                            <td>
-                                <button class="btn btn-primary">Aceptar</button>
-                                <button class="btn btn-danger">Rechazar</button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- Kanban Board for Request Management -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Gestión de Solicitudes por Estado</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0">Pendientes</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="status-column" id="pendiente"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">Aprobados</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="status-column" id="aprobado"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header bg-danger text-white">
+                                <h5 class="mb-0">Rechazados</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="status-column" id="rechazado"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0">Devueltos</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="status-column" id="devuelto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
