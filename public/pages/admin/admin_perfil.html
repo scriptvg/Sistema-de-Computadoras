@@ -18,7 +18,7 @@
             <!-- Enlace a Inicio - Contiene el logo de la empresa y enlaza a la página principal -->
             <a class="navbar-brand" href="../index.html">
                 <!-- Imagen del logo de la empresa con restricciones de tamaño -->
-                <img src="../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo" class="img-fluid" style="max-height: 40px;">
+                <img src="../../img/FWD - Logotipo - Slogan_Slogan gris.avif" alt="FWD Logo" class="img-fluid" style="max-height: 40px;">
             </a>
             <!-- Botón de menú móvil - Aparece en pantallas más pequeñas -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,16 +70,47 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center"></div>
                 <h1 class="display-4">Perfil de Administrador</h1>
                 <p class="lead">Bienvenido al perfil del administrador. Aquí puede gestionar usuarios, ver estadísticas y configurar el sistema.</p>
             </div>
         </div>
-    </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-users mr-2"></i>Gestionar Usuarios</h5>
+                        <p class="card-text">Administre los usuarios del sistema, agregue, edite o elimine cuentas de usuario.</p>
+                        <a href="#" class="btn btn-primary">Ir a Usuarios</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chart-line mr-2"></i>Ver Estadísticas</h5>
+                        <p class="card-text">Revise las estadísticas del sistema, incluyendo el uso y el rendimiento.</p>
+                        <a href="#" class="btn btn-primary">Ver Estadísticas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-cogs mr-2"></i>Configurar Sistema</h5>
+                        <p class="card-text">Ajuste la configuración del sistema para optimizar el rendimiento y la seguridad.</p>
+                        <a href="#" class="btn btn-primary">Configurar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+    <script type="module" src="../../js/utils/main.js"></script>
+    <script type="module" src="../../js/pages/dashboard-admin.js"></script>
 </body>
 </html>
